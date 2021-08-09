@@ -1,0 +1,108 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 98vmin;
+}
+#title-row {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: goldenrod;
+    font-family: 'Anton', sans-serif;
+    font-size: 100px;
+    text-transform: uppercase;
+    padding-top: 50px;
+}
+
+#score {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+#game-row {
+    height: 60%;
+    display: flex;
+}
+
+#left {
+    height: 100%;
+    width: 22.5%;
+}
+
+#middle {
+    height: 100%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    padding: 3px 0 3px 0;
+}
+
+.row {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.box {
+    height: 90%;
+    width: 19%;
+    background-color: blue;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: goldenrod;
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+
+.box:hover {
+    background-color: rgb(8, 49, 124);
+}
+
+#right {
+    height: 100%;
+    width: 22.5%;
+}
+
+#question-row {
+    height: 10%;
+}
+
+#answer-container {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    color: goldenrod;
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-right: 25px;
+}
+
+input {
+    height: 45%;
+    width: 30%;
+    margin-right: 10px;
+}
+
+button {
+    height: 45%;
+    width: 8%;
+}
