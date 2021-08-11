@@ -8,70 +8,102 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container">
+    <div id="game-container">
         <div id="title-row">Jeopardy!</div>
-        <div id="score">Your Score: $0</div>
+        <div id="score-row">
+            <h2 class="score-text">Your Score: $</h2>
+            <div class="score-update"></div>
+        </div>
         <div id="game-row">
             <div id="left">
             </div>
-            <div id="middle">
-                <div class="row 1">
-                    <div class="box one">category</div>
-                    <div class="box two">category</div>
-                    <div class="box three">category</div>
-                    <div class="box four">category</div>
-                    <div class="box five">category</div>
+            <div id="main-screen">
+                <div class="rows 1">
+                    <div class="cat 0"></div>
+                    <div class="cat 1"></div>
+                    <div class="cat 2"></div>
+                    <div class="cat 3"></div>
+                    <div class="cat 4"></div>
+                    <div class="cat 5"></div>
                 </div>
-                <div class="row 2">
-                    <div class="box one">$100</div>
-                    <div class="box two">$100</div>
-                    <div class="box three">$100</div>
-                    <div class="box four">$100</div>
-                    <div class="box five">$100</div>
+                <div class="rows 2">
+                    <button class="question 0">$200</button>
+                    <button class="question 1">$200</button>
+                    <button class="question 2">$200</button>
+                    <button class="question 3">$200</button>
+                    <button class="question 4">$200</button>
+                    <button class="question 5">$200</button>
                 </div>
-                <div class="row 3">
-                    <div class="box one">$200</div>
-                    <div class="box two">$200</div>
-                    <div class="box three">$200</div>
-                    <div class="box four">$200</div>
-                    <div class="box five">$200</div>
+                <div class="rows 3">
+                    <button class="question 6">$400</button>
+                    <button class="question 7">$400</button>
+                    <button class="question 8">$400</button>
+                    <button class="question 9">$400</button>
+                    <button class="question 10">$400</button>
+                    <button class="question 11">$400</button>
                 </div>
-                <div class="row 4">
-                    <div class="box one">$400</div>
-                    <div class="box two">$400</div>
-                    <div class="box three">$400</div>
-                    <div class="box four">$400</div>
-                    <div class="box five">$400</div>
+                <div class="rows 4">
+                    <button class="question 12">$600</button>
+                    <button class="question 13">$600</button>
+                    <button class="question 14">$600</button>
+                    <button class="question 15">$600</button>
+                    <button class="question 16">$600</button>
+                    <button class="question 17">$600</button>
                 </div>
-                <div class="row 5">
-                    <div class="box one">$600</div>
-                    <div class="box two">$600</div>
-                    <div class="box three">$600</div>
-                    <div class="box four">$600</div>
-                    <div class="box five">$600</div>
+                <div class="rows 5">
+                    <button class="question 18">$800</button>
+                    <button class="question 19">$800</button>
+                    <button class="question 20">$800</button>
+                    <button class="question 21">$800</button>
+                    <button class="question 22">$800</button>
+                    <button class="question 23">$800</button>
                 </div>
-                <div class="row 5">
-                    <div class="box one">$800</div>
-                    <div class="box two">$800</div>
-                    <div class="box three">$800</div>
-                    <div class="box four">$800</div>
-                    <div class="box five">$800</div>
+                <div class="rows 6">
+                    <button class="question 24">$1000</button>
+                    <button class="question 25">$1000</button>
+                    <button class="question 26">$1000</button>
+                    <button class="question 27">$1000</button>
+                    <button class="question 28">$1000</button>
+                    <button class="question 29">$1000</button>
                 </div>
             </div>
             <div id="right">                
             </div>
         </div>
-        <div id="question-row"></div>
-        <div id="answer-container">
-            <label for="answer-row">Answer:</label>
-            <input type="text" id="answer-row"></input>
-            <button>Submit</button>
+        <div id="bottom">
         </div>
     </div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title w-100" id="exampleModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+                <form>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Answer:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Submit Answer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="jeopardy.json"></script>
     <script src="main.js"></script>
 </body>
