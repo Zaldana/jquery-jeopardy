@@ -97,6 +97,8 @@ body {
     font-size: 20px;
     text-transform: uppercase;
     border: none;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 
