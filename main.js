@@ -1,6 +1,3 @@
-//Show Array
-const show = [5957, 6245, 5243, 4107, 5851, 4335, 4936 ];
-
 //Audio clips
 const intro = new Audio('sounds/jeopardy-intro.mp3');
 const questionTheme = new Audio('sounds/jeopardy-themelq.mp3');
@@ -22,7 +19,7 @@ async function game() {
     
     const rawData = await fetch('jeopardy.json');
     let data = await rawData.json();
-    data = data.filter(question => question.showNumber === 4936);
+    data = data.filter(question => question.showNumber === 6245);
     data = data.filter(question => question.round === "Jeopardy!")
     return data
 
@@ -47,6 +44,7 @@ $(document).ready( async function () {
 
 });
 
+//Clone index for next function
 let answerIndex = '';
 
 //Question click function
@@ -65,16 +63,16 @@ $("button.question").click( async function () {
 
     for (let i = 0; i <= 29; i++) {
 
-        if ($(this).hasClass(i) && $(this).hasClass('double')) {
+        if ($(this).hasClass(i)) {
 
-                double.load();
-                double.play();
-                questionTheme.load();
-                questionTheme.play();
-                $('.modal').modal('show');
-                $("h5.modal-title").text(`DAILY DOUBLE ${data[i].value}${data[i].category}`);
-                $("p").text(`${data[i].question}`);
-                answerIndex = i
+            double.load();
+            double.play();
+            questionTheme.load();
+            questionTheme.play();
+            $('.modal').modal('show');
+            $("h5.modal-title").text(`DAILY DOUBLE ${data[i].value}${data[i].category}`);
+            $("p").text(`${data[i].question}`);
+            answerIndex = i
 
         } if ($(this).hasClass(i)) {
 
@@ -87,7 +85,6 @@ $("button.question").click( async function () {
         
         } 
     }
-
 });
 
 //Answer click function
@@ -121,3 +118,29 @@ $("button.btn").click(async function () {
     
     }
 })
+
+//Show Array
+// const show = [5957, 6245, 5243, 4107, 5851, 4335, 4936];
+
+// $('.modal').modal('show');
+// $("h5.modal-title").text("Welcome to Jeopardy!");
+// $("h5.modal-title").css({
+//     "font-size": "100px",
+//     "color": "goldenrod",
+//     "font-family": "'Anton', sans-serif"
+// });
+// $("p").text(`Choose Option to Continue`);
+// $("form").remove();
+// $("button.btn").remove();
+// $(".modal-body").append('<button class="btn btn-primary start">Continue</button><button class="btn btn-success start">New Game</button>');
+
+// $(".btn").click(async function () {
+
+//     $('.modal').modal('hide');
+
+// });
+
+
+// daily double
+// const value = data[i].value;
+// let numValue = Number(newScore.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " "));
